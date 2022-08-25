@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+apply plugin: 'java'
+
+group 'com.learnwiremock'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+test{
+    useJUnitPlatform()
+}
+
+dependencies {
+    //webclient-dependencies
+    implementation 'org.springframework:spring-webflux:5.3.22'
+    implementation 'io.projectreactor.netty:reactor-netty:1.0.22'
+
+    //lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    implementation 'org.slf4j:slf4j-api:1.7.36'
+    implementation 'org.slf4j:slf4j-simple:1.7.36'
+
+    //jackson
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.3'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.3'
+    implementation 'com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.3'
+
+    //junit5-dependencies
+    testImplementation('org.junit.jupiter:junit-jupiter-engine:5.9.0')
+}
