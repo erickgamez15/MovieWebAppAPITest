@@ -10,6 +10,7 @@ sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
+    maven {url "https://jitpack.io"}
 }
 
 test{
@@ -35,4 +36,8 @@ dependencies {
 
     //junit5-dependencies
     testImplementation('org.junit.jupiter:junit-jupiter-engine:5.9.0')
+
+    //wiremock
+    testImplementation 'com.github.tomakehurst:wiremock-jre8-standalone:2.33.2'
+    implementation "com.github.JensPiegsa:wiremock-extension:0.4.0"
 }

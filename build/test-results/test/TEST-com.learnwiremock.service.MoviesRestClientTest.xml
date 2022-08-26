@@ -1,8 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.learnwiremock.service.MoviesRestClientTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-25T05:40:10" hostname="PIXIE" time="1.052">
+<testsuite name="com.learnwiremock.service.MoviesRestClientTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-26T04:27:44" hostname="PIXIE" time="2.433">
   <properties/>
-  <testcase name="deleteMovie_badRequest()" classname="com.learnwiremock.service.MoviesRestClientTest" time="1.052"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[[Test worker] ERROR com.learnwiremock.service.MoviesRestClient - WebClientResponseException in deleteMovie. Status code is 404 and the message is {"timestamp":"2022-08-25T05:40:11.412+0000","status":404,"error":"Not Found","message":"No Movie Available with the given Id - 1122","path":"/movieservice/v1/movie/1122"}
+  <testcase name="updateMovie_badRequest()" classname="com.learnwiremock.service.MoviesRestClientTest" time="2.433"/>
+  <system-out><![CDATA[2022-08-25 23:27:43.506 Verbose logging enabled
+Base URL: http://localhost:8088/
+com.github.tomakehurst.wiremock.core.WireMockConfiguration@6b85300e
+2022-08-25 23:27:45.353 Received request to /mappings with body {
+  "id" : "2b96e93e-1a84-4f5a-add0-c2eb942d9680",
+  "request" : {
+    "urlPathPattern" : "/movieservice/v1/movie/[0-9]+",
+    "method" : "PUT",
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : {
+        "expression" : "$.cast",
+        "contains" : "ABC"
+      }
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "headers" : {
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "2b96e93e-1a84-4f5a-add0-c2eb942d9680"
+}
+2022-08-25 23:27:46.519 Request received:
+127.0.0.1 - PUT /movieservice/v1/movie/111
+
+User-Agent: [ReactorNetty/1.0.22]
+Host: [localhost:8088]
+Accept-Encoding: [gzip]
+Accept: [*/*]
+Content-Length: [74]
+Content-Type: [application/json]
+{"movie_id":null,"name":null,"cast":"ABC","year":null,"release_date":null}
+
+
+Matched response definition:
+{
+  "status" : 400,
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 400
+Content-Type: [application/json]
+Matched-Stub-Id: [2b96e93e-1a84-4f5a-add0-c2eb942d9680]
+
+
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO org.eclipse.jetty.util.log - Logging initialized @1905ms
+[Test worker] INFO org.eclipse.jetty.server.Server - jetty-9.2.24.v20180105
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@1a6f5124{/__admin,null,AVAILABLE}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@29539e36{/,null,AVAILABLE}
+[Test worker] INFO org.eclipse.jetty.server.NetworkTrafficServerConnector - Started NetworkTrafficServerConnector@29caf222{HTTP/1.1}{0.0.0.0:8088}
+[Test worker] INFO org.eclipse.jetty.server.Server - Started @2068ms
+[qtp1525844775-23] INFO /__admin - RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.AdminRequestHandler. Normalized mapped under returned 'null'
+[qtp1525844775-24] INFO / - RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+[Test worker] ERROR com.learnwiremock.service.MoviesRestClient - WebClientResponseException in updateMovie. Status code is 400 and the message is 
+[Test worker] INFO org.eclipse.jetty.server.NetworkTrafficServerConnector - Stopped NetworkTrafficServerConnector@29caf222{HTTP/1.1}{0.0.0.0:8088}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@29539e36{/,null,UNAVAILABLE}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@1a6f5124{/__admin,null,UNAVAILABLE}
 ]]></system-err>
 </testsuite>
